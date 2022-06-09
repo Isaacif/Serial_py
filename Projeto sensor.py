@@ -1,8 +1,8 @@
-#Sensor By Isaac
 import matplotlib.pyplot as plt
 import  serial 
 import keyboard               
 k = 0
+
 ser = serial.Serial('COM4', baudrate = 9600, timeout=1) #iniciando a comunicação serial
 eixo_y = [] #lista que armazena o numero de dados
 c_parada = 0 #saida do laço
@@ -20,6 +20,8 @@ while (c_parada != 1):
        continue
     if keyboard.is_pressed('q'): #saida do laço para a tecla pressionada 
         c_parada = 1
+        
+
 arquivo.close()
 eixo_x = list(range(0,len(eixo_y)))
 plt.ylim(0, 150) #limite de 5 metros no plot
